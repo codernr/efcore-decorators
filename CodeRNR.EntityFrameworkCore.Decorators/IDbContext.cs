@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace CodeRNR.EntityFrameworkCore.Decorators
 {
-    public interface IDbContext : IDisposable, IAsyncDisposable, IResettableService
+    public interface IDbContext : IDisposable, IAsyncDisposable
     {
         ChangeTracker ChangeTracker { get; }
 
@@ -60,6 +60,7 @@ namespace CodeRNR.EntityFrameworkCore.Decorators
 
         int GetHashCode();
 
+        [Obsolete("Use Set() for entity types without keys")]
         DbQuery<TQuery> Query<TQuery>() where TQuery : class;
 
         EntityEntry Remove(object entity);
