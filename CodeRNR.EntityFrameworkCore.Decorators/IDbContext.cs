@@ -89,9 +89,5 @@ namespace CodeRNR.EntityFrameworkCore.Decorators
         void UpdateRange(IEnumerable<object> entities);
 
         void UpdateRange(params object[] entities);
-
-        void OnConfiguring(DbContextOptionsBuilder optionsBuilder);
-
-        void OnModelCreating(ModelBuilder modelBuilder);
     }
 }
